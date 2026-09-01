@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
+[application]
+
+config/name="Space Slider"
+run/main_scene="res://Scenes/Main.tscn"
+config/features=PackedStringArray("4.7")
+config/icon="uid://cp6owgokhrgrv"
+
+[autoload]
+
+Singleton="*res://Scenes/Singleton.gd"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
+window/size/width=720
+window/size/height=1280
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="AreaPlayer"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Object"
+2d_physics/layer_5="PowerUp"
+2d_physics/layer_6="BulletsPlayer"
+2d_physics/layer_7="BulletsEnemy"
+2d_physics/layer_8="LaserBoss"
+2d_physics/layer_9="MissilePlayer"
+2d_physics/layer_10="MissileEnemy"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+environment/default_environment="res://default_env.tres"

@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://s50n8u1wym83"]
+
+[ext_resource type="Script" uid="uid://c1o4bvf6wgfy1" path="res://Scenes/Main.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://b67o7k6ygvbfy" path="res://Scenes/Game.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://jlpqgfnye6gj" path="res://Art/GUI/5471985.jpg" id="3_3yf2y"]
+[ext_resource type="Texture2D" uid="uid://bd2ok8evag6po" path="res://Art/Player/playerShip2_orange.png" id="4"]
+[ext_resource type="FontFile" uid="uid://bwg0si80vw0xj" path="res://Art/Fonts/Kenney Blocks.ttf" id="4_32imo"]
+[ext_resource type="Texture2D" uid="uid://c5gmmcpojbmjx" path="res://Art/GUI/configuration.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://mjfljhypyal2" path="res://Art/GUI/sfx_on.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://07eu8w08qcw8" path="res://Art/GUI/sfx_off.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ilnwrotsccxv" path="res://Art/GUI/keys.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://mrpiyaqjldeg" path="res://Art/GUI/tutorial.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://7ym4pevdbohu" path="res://Art/GUI/about.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c2juugk8g8gbn" path="res://Art/GUI/info.png" id="12_frkhe"]
+[ext_resource type="AudioStream" uid="uid://bj8ndrwtkfq1o" path="res://music/uiopash-space-dream-193968.mp3" id="12_grg3l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_frkhe"]
+font_size = 20
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_grg3l"]
+font_size = 30
+font_color = Color(1, 0, 0.3647059, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kpch"]
+font_size = 30
+font_color = Color(1, 0, 0.3647059, 1)
+
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": 0,
+"name": &"sfx_off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": 0,
+"name": &"sfx_on",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grg3l"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Control" unique_id=297235799]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+Game = ExtResource("2")
+
+[node name="background" type="Node2D" parent="." unique_id=524840525]
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=1610237572]
+offset_right = 1189.0
+offset_bottom = 1549.0
+texture = ExtResource("3_3yf2y")
+expand_mode = 2
+
+[node name="Screen" type="Control" parent="." unique_id=316517415]
+anchors_preset = 0
+
+[node name="Up" type="Control" parent="Screen" unique_id=1124112283]
+anchors_preset = 0
+
+[node name="Title" type="Label" parent="Screen/Up" unique_id=892963435]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 73.0
+offset_top = 258.0
+offset_right = 243.0
+offset_bottom = 288.0
+grow_horizontal = 2
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("4_32imo")
+text = "Space Slider"
+label_settings = SubResource("LabelSettings_frkhe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScore" type="Label" parent="Screen/Up" unique_id=701373935]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 370.0
+offset_top = 464.0
+offset_right = 398.0
+offset_bottom = 487.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "100"
+label_settings = SubResource("LabelSettings_grg3l")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Screen/Up/HighScore" unique_id=1356247066]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.0
+offset_top = -2.0
+offset_right = -41.0
+offset_bottom = 40.0
+grow_horizontal = 2
+text = "highscore"
+label_settings = SubResource("LabelSettings_4kpch")
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="Screen/Up" unique_id=711237222]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 260.0
+offset_top = 817.0
+offset_right = 380.0
+offset_bottom = 900.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(60, 45)
+layout_direction = 2
+icon = ExtResource("4")
+flat = true
+
+[node name="Down" type="Control" parent="Screen" unique_id=2088928186]
+anchors_preset = 0
+
+[node name="Settings" type="Button" parent="Screen/Down" unique_id=723571159]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 1021.0
+offset_right = 567.0
+offset_bottom = 1077.0
+scale = Vector2(1.5, 1.5)
+icon = ExtResource("5")
+flat = true
+
+[node name="sfx" type="Button" parent="Screen/Down/Settings" unique_id=1709328443]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_right = -25.0
+offset_bottom = 52.0
+flat = true
+
+[node name="sfx" type="AnimatedSprite2D" parent="Screen/Down/Settings/sfx" unique_id=760676167]
+position = Vector2(5.98393, 3.41943)
+sprite_frames = SubResource("4")
+animation = &"sfx_on"
+centered = false
+
+[node name="Store" type="Button" parent="Screen/Down" unique_id=1897343020]
+visible = false
+layout_mode = 0
+offset_left = 248.0
+offset_top = 1013.0
+offset_right = 304.0
+offset_bottom = 1069.0
+icon = ExtResource("8")
+flat = true
+
+[node name="tutorial" type="Button" parent="Screen/Down" unique_id=626376779]
+visible = false
+layout_mode = 0
+offset_left = 491.0
+offset_top = 627.0
+offset_right = 547.0
+offset_bottom = 683.0
+icon = ExtResource("9")
+flat = true
+
+[node name="about" type="Button" parent="Screen/Down" unique_id=443071682]
+visible = false
+layout_mode = 0
+offset_left = 382.0
+offset_top = 1011.0
+offset_right = 438.0
+offset_bottom = 1067.0
+icon = ExtResource("10")
+flat = true
+
+[node name="InfoButton" type="TextureButton" parent="Screen/Down" unique_id=1543978893]
+layout_mode = 1
+offset_left = 62.0
+offset_top = 1048.0
+offset_right = 110.0
+offset_bottom = 1096.0
+texture_normal = ExtResource("12_frkhe")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=803423093]
+stream = ExtResource("12_grg3l")
+autoplay = true
+
+[node name="AboutButton" type="AcceptDialog" parent="." unique_id=1345195622]
+oversampling_override = 1.0
+size = Vector2i(380, 428)
+theme_override_styles/panel = SubResource("StyleBoxFlat_grg3l")
+ok_button_text = "Close"
+
+[node name="Label" type="Label" parent="AboutButton" unique_id=157694677]
+custom_minimum_size = Vector2(380, 180)
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0)
+text = "Space Slider (Modified Version)
+Date: September 2026
+
+Original Project by: stevkazt
+(https://github.com/stevkazt/SlideShooter)
+
+Modified by: Ali Mohammadi
+(https://github.com/alimohammadi05)
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version."
+autowrap_mode = 3
+
+[connection signal="pressed" from="Screen/Up/Play" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Screen/Down/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="Screen/Down/Settings/sfx" to="." method="_on_sfx_pressed"]
+[connection signal="pressed" from="Screen/Down/InfoButton" to="." method="_on_question_button_pressed"]

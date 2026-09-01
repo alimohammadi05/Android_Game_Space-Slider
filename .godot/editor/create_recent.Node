@@ -1,0 +1,9 @@
+Label
+AcceptDialog
+TextureButton
+AudioStreamPlayer2D
+AudioListener2D
+TextureRect
+AnimatedSprite2D
+Node2D
+CanvasLayer

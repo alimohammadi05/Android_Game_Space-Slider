@@ -35,15 +35,15 @@ In accordance with Section 5 of the GNU AGPL v3, notice is hereby given that thi
 
 ## How to Play
 
-You can download the ready-to-play version of the game directly without needing the game engine:
+You can download the ready-to-play Android APK directly without needing the game engine or building from source:
 
 1. Head over to the [Releases](../../releases) page of this repository.
-2. Download the latest compiled version for your platform (Android / Desktop).
-3. Extract the archive (if necessary) and launch the game to enjoy!
+2. Download the latest `.apk` file for Android.
+3. Install the APK on your Android device and launch the game to play!
 
 ## Skills & Technologies Used
 
 * **Game Engine:** Godot Engine (GDScript) for game loop architecture, scene management, and node-based UI design.
 * **UI/UX & Layout Management:** Configuring Control nodes, Anchor presets, and dynamic script-based positioning (`get_viewport_rect().size`) to support responsive layouts across different screen sizes.
 * **Open-Source Compliance:** Implementing proper legal notice requirements, copyright preservation, and UI attribution under the GNU AGPLv3 license framework.
-* **Version Control:** Git and GitHub for source code management, tracking modifications, and publishing derivative works.# Android_Game_Space-Slider
+* **Version Control:** Git and GitHub for source code management, tracking modifications, and publishing derivative works.

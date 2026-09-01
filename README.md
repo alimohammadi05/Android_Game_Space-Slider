@@ -22,6 +22,10 @@ In accordance with Section 5 of the GNU AGPL v3, notice is hereby given that thi
     * Modified core game scripts to shorten power-up spawn intervals so they appear much more frequently.
     * Integrated a brand-new extra life mechanism.
     * Updated code logic to properly trigger and display text messages upon a Game Over.
+    * Increased the player's total initial lives from 3 to 5 for a smoother experience and better gameplay balance.
+    * Optimized and bug-fixed the boss fight to make defeating the boss easier and ensure accurate score tracking.
+    * Added an on-screen text guide ("Double Tap!") to instruct players on how to activate special powers.
+    * Optimized enemy AI and refined their movement patterns to provide a more engaging challenge.
   * **Visual Assets & Overhaul:**
     * Redesigned and updated the start button icon.
     * Replaced and modernized the player's ship asset.

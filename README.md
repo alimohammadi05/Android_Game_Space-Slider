@@ -1,5 +1,9 @@
 # Space Slider
 
+<p align="center">
+  <img src="https://github.com/alimohammadi05/Android_Game_Space-Slider/blob/main/Game_icon.jpg" alt="Space Slider Game Icon" width="200"/>
+</p>
+
 A 2D space arcade game built with the Godot Engine.
 
 ## License

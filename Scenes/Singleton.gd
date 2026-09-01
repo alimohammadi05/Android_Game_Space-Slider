@@ -13,5 +13,9 @@ func _ready():
 	boss = false
 	sfx = true
 	score = 0
+<<<<<<< HEAD
 	lifes = 5
+=======
+	lifes = 3
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	

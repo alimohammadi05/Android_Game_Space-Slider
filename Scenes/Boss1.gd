@@ -1,5 +1,9 @@
 extends Area2D
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 @export var bullet : PackedScene
 
 var screensize
@@ -7,9 +11,18 @@ var set_pos = Vector2()
 var target = null
 var laser_count = 0
 var missile_counter = 0
+<<<<<<< HEAD
 
 func _ready():
 	scale = Vector2(1.2, 1.2)
+=======
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	target = get_tree().get_nodes_in_group("player")[0]
 	screensize = get_viewport_rect().size
 	position = Vector2(randf_range(0,screensize.x),screensize.y)
@@ -22,6 +35,10 @@ func _process(delta):
 		position = position.lerp(Vector2(screensize.x/2,screensize.y/2), delta*0.5)
 		if Singleton.score > 1540:
 			$Laser.show()
+<<<<<<< HEAD
+=======
+			#$AnimatedSprite.animation = "laser"
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 			$Laser/CollisionShape2D.disabled = false
 	else:
 		if $PosTimer.is_stopped():
@@ -32,9 +49,17 @@ func _process(delta):
 	var target_dir = (target.global_position - global_position).normalized()
 	var current_dir = Vector2(1, 0).rotated(self.global_rotation)
 	self.global_rotation = current_dir.lerp(target_dir, delta*2).angle()
+<<<<<<< HEAD
 
 func _on_Boss1_area_entered(area):
 	if area.get_collision_layer_value(1) or area.get_collision_layer_value(6):
+=======
+	
+
+
+func _on_Boss1_area_entered(area):
+	if area.get_collision_layer_value(1) or area.get_collision_layer_value(5):
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		Singleton.score += 5
 
 func _on_Timer_timeout():
@@ -53,6 +78,10 @@ func _on_MissileTimer_timeout():
 		$MissilesTimer.start()
 		missile_counter = 0
 		laser_count = 0
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 
 func _on_Laser2Timer_timeout():
 	var b = bullet.instantiate()
@@ -61,6 +90,11 @@ func _on_Laser2Timer_timeout():
 	get_parent().add_child(b)
 	b.start($Position2D3.global_position,Vector2(1, 0).rotated($Position2D.global_rotation),1,2)
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 func _on_MissilesTimer_timeout():
 	missile_counter += 1
 	if missile_counter < 3:
@@ -69,3 +103,7 @@ func _on_MissilesTimer_timeout():
 		b.team = 2
 		get_parent().add_child(b)
 		b.start($Position2D2.global_position,Vector2(1, 0).rotated($Position2D.global_rotation),2,2)
+<<<<<<< HEAD
+=======
+		
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699

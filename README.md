@@ -54,4 +54,8 @@ You can download the ready-to-play Android APK directly without needing the game
 * **Game Engine:** Godot Engine (GDScript) for game loop architecture, scene management, and node-based UI design.
 * **UI/UX & Layout Management:** Configuring Control nodes, Anchor presets, and dynamic script-based positioning (`get_viewport_rect().size`) to support responsive layouts across different screen sizes.
 * **Open-Source Compliance:** Implementing proper legal notice requirements, copyright preservation, and UI attribution under the GNU AGPLv3 license framework.
+<<<<<<< HEAD
 * **Version Control:** Git and GitHub for source code management, tracking modifications, and publishing derivative works.
+=======
+* **Version Control:** Git and GitHub for source code management, tracking modifications, and publishing derivative works.
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699

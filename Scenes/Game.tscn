@@ -47,10 +47,13 @@ animations = [{
 "speed": 5.0
 }]
 
+<<<<<<< HEAD
 [sub_resource type="LabelSettings" id="LabelSettings_8r6kd"]
 font_size = 20
 font_color = Color(1, 1, 0, 1)
 
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 [sub_resource type="LabelSettings" id="LabelSettings_x3xnh"]
 font_size = 32
 font_color = Color(1, 1, 0, 1)
@@ -123,7 +126,11 @@ texture = ExtResource("18_f804r")
 expand_mode = 2
 
 [node name="ninjaSpawn" type="Timer" parent="." unique_id=1948281300]
+<<<<<<< HEAD
 wait_time = 1.2
+=======
+wait_time = 0.7
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 autostart = true
 
 [node name="Lifes" type="Control" parent="." unique_id=1672070432]
@@ -145,6 +152,7 @@ position = Vector2(240, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("6")
 
+<<<<<<< HEAD
 [node name="Life4" type="Sprite2D" parent="Lifes" unique_id=396201269]
 position = Vector2(310, 100)
 scale = Vector2(2, 2)
@@ -155,6 +163,8 @@ position = Vector2(380, 100)
 scale = Vector2(2, 2)
 texture = ExtResource("6")
 
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 [node name="Powers" type="Control" parent="." unique_id=496108812]
 visible = false
 layout_mode = 3
@@ -169,6 +179,7 @@ sprite_frames = SubResource("5")
 animation = &"shield"
 centered = false
 
+<<<<<<< HEAD
 [node name="Label" type="Label" parent="Powers" unique_id=34928648]
 layout_mode = 0
 offset_right = 40.0
@@ -176,6 +187,8 @@ offset_bottom = 23.0
 text = "Double Tap!!!"
 label_settings = SubResource("LabelSettings_8r6kd")
 
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 [node name="Score" type="Label" parent="." unique_id=1968500267]
 offset_left = 489.0
 offset_top = 78.0
@@ -195,10 +208,17 @@ wait_time = 4.0
 one_shot = true
 
 [node name="ShooterTimer" type="Timer" parent="." unique_id=1297887963]
+<<<<<<< HEAD
 wait_time = 4.0
 
 [node name="PowerUpTimer" type="Timer" parent="." unique_id=292900762]
 wait_time = 6.0
+=======
+wait_time = 5.0
+
+[node name="PowerUpTimer" type="Timer" parent="." unique_id=292900762]
+wait_time = 10.0
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 
 [node name="Buttons" type="Control" parent="." unique_id=866723046]
 process_mode = 3

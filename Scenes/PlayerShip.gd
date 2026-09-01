@@ -12,14 +12,22 @@ var taps = 0
 var shields_number = 0
 var shield = false
 var lost_shield_played = false
+<<<<<<< HEAD
 var original_scale = Vector2(1, 1)
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 
 @export var Bullet: PackedScene
 
 func _ready():
+<<<<<<< HEAD
 	screensize = get_viewport_rect().size
 	if has_node("Sprite"):
 		original_scale = $Sprite.scale
+=======
+	#can_get_damage = false
+	screensize = get_viewport_rect().size
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 
 func _process(delta):
 	if shield:
@@ -130,7 +138,10 @@ func _powerupShield():
 		can_get_damage = false
 		shields_number = 3
 		shield = true
+<<<<<<< HEAD
 		$Sprite.scale = original_scale * 0.5
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 
 func _powerupShieldprocess():
 	if shields_number == 3:
@@ -153,7 +164,10 @@ func _powerupShieldprocess():
 		if !$sfx_lost_shield.playing  and !lost_shield_played:
 			$sfx_lost_shield.play()
 		$Sprite.animation = "default"
+<<<<<<< HEAD
 		$Sprite.scale = original_scale
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		shield = false
 		can_get_damage = true
 
@@ -167,7 +181,11 @@ func _on_PlayerShip_area_entered(_area):
 		$sfx_shielup.play()
 		$Sprite.play("shield")
 		$LifeTimer.start()
+<<<<<<< HEAD
 		Singleton.lifes -= 1  
+=======
+		Singleton.lifes -= 1
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		if Singleton.lifes == 0:
 			Singleton.powers.available = false
 			$Sprite.play("explode")

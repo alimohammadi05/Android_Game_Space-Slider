@@ -10,9 +10,19 @@ var score_file = "user://highscore.txt"
 var higscore = 0
 var screensize
 var Icons = [0,"stair","shield","rocket"]
+<<<<<<< HEAD
 var shooter_halved = false
 
 func _ready():
+=======
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	
+	#testing
+	#
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	randomize()
 	if !Singleton.sfx:
 		$Buttons/pause_menu/sfx/sfx.animation = "sfx_off"
@@ -23,6 +33,7 @@ func _ready():
 	player.position = Vector2(screensize.x/2,900)
 	
 	$GameOverTimer.wait_time = $GameOverTimer.wait_time / 2.0
+<<<<<<< HEAD
 	
 	if $Powers.has_node("Label"):
 		var lbl = $Powers.get_node("Label")
@@ -32,15 +43,23 @@ func _ready():
 func _process(_delta):
 	# اصلاح شده از hidden به visible!
 	if Singleton.powers.available and !$Powers.visible:
+=======
+
+func _process(_delta):
+	if Singleton.powers.available and $Powers.hidden:
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		$Powers/AnimatedSprite.animation = Icons[Singleton.powers.type]
 		$Powers.show()
 	else:
 		$Powers.hide()
 	
+<<<<<<< HEAD
 	if Singleton.score > 2000 and !shooter_halved:
 		$ShooterTimer.wait_time = $ShooterTimer.wait_time / 2.0
 		shooter_halved = true
 	
+=======
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	if Singleton.lifes == 0 and $GameOverTimer.is_stopped():
 		get_tree().paused = true
 		check_highscore()
@@ -64,7 +83,11 @@ func _process(_delta):
 		
 	if Singleton.score > 1000 and Singleton.boss:
 		Singleton.boss = false
+<<<<<<< HEAD
 	if Singleton.score > 500 and Singleton.score < 600 and !Singleton.boss:
+=======
+	if Singleton.score > 500 and Singleton.score < 600 and !Singleton.boss:# 1000 - 1100
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		Singleton.boss = true
 		$ShooterTimer.stop()
 		$ninjaSpawn.stop()
@@ -75,6 +98,7 @@ func _process(_delta):
 		$ninjaSpawn.start()
 		
 	$Score.text = str(Singleton.score)
+<<<<<<< HEAD
 	if Singleton.lifes < 5:
 		$Lifes/Life5.hide()
 		if Singleton.lifes < 4:
@@ -90,15 +114,34 @@ func _process(_delta):
 		$Lifes.add_theme_color_override("font_color",Color(0,1,0,1))
 	elif Singleton.lifes == 3:
 		$Lifes.add_theme_color_override("font_color",Color(0.5,1,0,1))
+=======
+	if Singleton.lifes < 3:
+		$Lifes/Life3.hide()
+		if Singleton.lifes < 2:
+			$Lifes/Life2.hide()
+			if Singleton.lifes < 1:
+				$Lifes/Life1.hide()
+	
+	if Singleton.lifes == 3:
+		$Lifes.add_theme_color_override("font_color",Color(0,1,0,1))
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	elif Singleton.lifes == 2:
 		$Lifes.add_theme_color_override("font_color",Color("#ffb300"))
 	elif Singleton.lifes == 1:
 		$Lifes.add_theme_color_override("font_color",Color(1,0,0,1))
+<<<<<<< HEAD
 
 	if Singleton.score > 100 and $ShooterTimer.is_stopped() and !Singleton.boss:
 		$ShooterTimer.start()
 
 	if Singleton.score > 10 and $PowerUpTimer.is_stopped():
+=======
+	#Empieza shooter
+	if Singleton.score > 100 and $ShooterTimer.is_stopped() and !Singleton.boss:
+		$ShooterTimer.start()
+	#empiezan power ups
+	if Singleton.score > 10 and $PowerUpTimer.is_stopped():#200
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		$PowerUpTimer.start()
 	
 func _on_EnemySpawn_timeout():
@@ -111,7 +154,11 @@ func _on_GameOverTimer_timeout():
 	var Main = load("res://Scenes/Main.tscn")
 	var main = Main.instantiate()
 	get_tree().paused = false
+<<<<<<< HEAD
 	Singleton.lifes = 5
+=======
+	Singleton.lifes = 3
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	Singleton.score = 0
 	Singleton.powers.available = 0
 	Singleton.boss = false
@@ -146,8 +193,15 @@ func _on_ShooterTimer_timeout():
 	add_child(e)
 
 func _on_PowerUpTimer_timeout():
+<<<<<<< HEAD
 		randomize()
 		var power = PowerUp.instantiate()
+=======
+		# This code instantite a new power up
+		randomize()
+		var power = PowerUp.instantiate()
+		# اضافه شدن نوع 3 (جون اضافه) به لیست توزیع پاورآپ‌ها
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 		var distribution = [1,1,1,1,1,1,2,2,2,3,3,3]
 		var rand_position = randi()%12+0
 		power.type = distribution[rand_position]
@@ -167,7 +221,11 @@ func _on_Button_yes_pressed():
 	var Main = load("res://Scenes/Main.tscn")
 	var main = Main.instantiate()
 	get_tree().paused = false
+<<<<<<< HEAD
 	Singleton.lifes = 5
+=======
+	Singleton.lifes = 3
+>>>>>>> 64e88e1aba16fde332e7cba75f8e7ec213b85699
 	Singleton.score = 0
 	Singleton.boss = false
 	get_parent().add_child(main)

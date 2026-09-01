@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://b67o7k6ygvbfy"]
+
+[ext_resource type="Script" uid="uid://bbumhn0u8b003" path="res://Scenes/Game.gd" id="1"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemy.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://cpnottxufs8tg" path="res://Scenes/PlayerShip.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://dwr46ndsg1eww" path="res://Scenes/PowerUp.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://Scenes/Boss1.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://dw67xtg3dq74u" path="res://Art/GUI/playerLife1_blue.png" id="6"]
+[ext_resource type="FontFile" uid="uid://bwg0si80vw0xj" path="res://Art/Fonts/Kenney Blocks.ttf" id="7"]
+[ext_resource type="Texture2D" uid="uid://b8j7l5ylexh7l" path="res://Art/GUI/play.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bdjchxd477t7d" path="res://Art/GUI/pause.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://n2o6lrk6jv84" path="res://Art/GUI/home.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cm62p0j2l53yw" path="res://Art/GUI/yes.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dorfx77c4xi0j" path="res://Art/GUI/no.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://mjfljhypyal2" path="res://Art/GUI/sfx_on.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://07eu8w08qcw8" path="res://Art/GUI/sfx_off.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://daw7g4fql7sws" path="res://Art/PowerUps/Escudo.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bl40nev780w7i" path="res://Art/PowerUps/Multishot.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bmf72scm0qi4h" path="res://Art/PowerUps/Roketluncher.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://jlpqgfnye6gj" path="res://Art/GUI/5471985.jpg" id="18_f804r"]
+[ext_resource type="AudioStream" uid="uid://bj8ndrwtkfq1o" path="res://music/uiopash-space-dream-193968.mp3" id="19_8r6kd"]
+
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}],
+"loop": 1,
+"name": &"rocket",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
+"loop": 1,
+"name": &"shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}],
+"loop": 0,
+"name": &"stair",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3xnh"]
+font_size = 32
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}],
+"loop": 0,
+"name": &"pause",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": 0,
+"name": &"play",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": 0,
+"name": &"home",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": 0,
+"name": &"sfx_off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": 0,
+"name": &"sfx_on",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D" unique_id=820967773]
+process_mode = 1
+position = Vector2(0, 1)
+script = ExtResource("1")
+Enemy = ExtResource("2")
+PLAYER = ExtResource("3")
+PowerUp = ExtResource("4")
+Boss1 = ExtResource("5")
+
+[node name="background" type="Node2D" parent="." unique_id=876570553]
+z_index = -8
+
+[node name="TextureRect" type="TextureRect" parent="background" unique_id=474749902]
+offset_right = 1189.0
+offset_bottom = 1549.0
+texture = ExtResource("18_f804r")
+expand_mode = 2
+
+[node name="ninjaSpawn" type="Timer" parent="." unique_id=1948281300]
+wait_time = 0.7
+autostart = true
+
+[node name="Lifes" type="Control" parent="." unique_id=1672070432]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Life1" type="Sprite2D" parent="Lifes" unique_id=314110464]
+position = Vector2(100, 100)
+scale = Vector2(2, 2)
+texture = ExtResource("6")
+
+[node name="Life2" type="Sprite2D" parent="Lifes" unique_id=823245096]
+position = Vector2(170, 100)
+scale = Vector2(2, 2)
+texture = ExtResource("6")
+
+[node name="Life3" type="Sprite2D" parent="Lifes" unique_id=215883104]
+position = Vector2(240, 100)
+scale = Vector2(2, 2)
+texture = ExtResource("6")
+
+[node name="Powers" type="Control" parent="." unique_id=496108812]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 148.0
+offset_right = 66.0
+offset_bottom = 148.0
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Powers" unique_id=1205472148]
+sprite_frames = SubResource("5")
+animation = &"shield"
+centered = false
+
+[node name="Score" type="Label" parent="." unique_id=1968500267]
+offset_left = 489.0
+offset_top = 78.0
+offset_right = 544.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 32
+text = "100"
+label_settings = SubResource("LabelSettings_x3xnh")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GameOverTimer" type="Timer" parent="." unique_id=1266058738]
+process_mode = 3
+process_priority = 1
+wait_time = 4.0
+one_shot = true
+
+[node name="ShooterTimer" type="Timer" parent="." unique_id=1297887963]
+wait_time = 5.0
+
+[node name="PowerUpTimer" type="Timer" parent="." unique_id=292900762]
+wait_time = 10.0
+
+[node name="Buttons" type="Control" parent="." unique_id=866723046]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+
+[node name="pause_menu" type="Button" parent="Buttons" unique_id=2143132691]
+layout_mode = 0
+offset_right = 72.0
+offset_bottom = 72.0
+flat = true
+
+[node name="pauseBtt" type="AnimatedSprite2D" parent="Buttons/pause_menu" unique_id=1975398414]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("2")
+animation = &"pause"
+centered = false
+
+[node name="home" type="Button" parent="Buttons/pause_menu" unique_id=1011007454]
+visible = false
+layout_mode = 0
+offset_left = -200.0
+offset_right = -128.0
+offset_bottom = 72.0
+flat = true
+
+[node name="Home" type="AnimatedSprite2D" parent="Buttons/pause_menu/home" unique_id=1730706236]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("3")
+animation = &"home"
+centered = false
+
+[node name="Button_yes" type="Button" parent="Buttons/pause_menu/home" unique_id=999035878]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_top = -80.0
+offset_right = -32.0
+offset_bottom = -32.0
+flat = true
+
+[node name="yes" type="Sprite2D" parent="Buttons/pause_menu/home/Button_yes" unique_id=44180458]
+texture = ExtResource("11")
+centered = false
+
+[node name="Button_no" type="Button" parent="Buttons/pause_menu/home" unique_id=837147136]
+visible = false
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 47.0
+flat = true
+
+[node name="no" type="Sprite2D" parent="Buttons/pause_menu/home/Button_no" unique_id=1633930165]
+texture = ExtResource("12")
+centered = false
+
+[node name="sfx" type="Button" parent="Buttons/pause_menu" unique_id=952677383]
+visible = false
+layout_mode = 0
+offset_left = -100.0
+offset_right = -28.0
+offset_bottom = 72.0
+flat = true
+
+[node name="sfx" type="AnimatedSprite2D" parent="Buttons/pause_menu/sfx" unique_id=1173410630]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("4")
+animation = &"sfx_on"
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1379689049]
+stream = ExtResource("19_8r6kd")
+autoplay = true
+
+[connection signal="timeout" from="ninjaSpawn" to="." method="_on_EnemySpawn_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
+[connection signal="timeout" from="ShooterTimer" to="." method="_on_ShooterTimer_timeout"]
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
+[connection signal="pressed" from="Buttons/pause_menu" to="." method="_on_pause_menu_pressed"]
+[connection signal="pressed" from="Buttons/pause_menu/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Buttons/pause_menu/home/Button_yes" to="." method="_on_Button_yes_pressed"]
+[connection signal="pressed" from="Buttons/pause_menu/home/Button_no" to="." method="_on_Button_no_pressed"]
+[connection signal="pressed" from="Buttons/pause_menu/sfx" to="." method="_on_sfx_pressed"]
